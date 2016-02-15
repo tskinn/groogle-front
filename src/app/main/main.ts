@@ -40,7 +40,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 		  SearchService
 	 ]
 })
-export default class Greeting {
+export default class App {
 	 greeting = 'Hello World';
 	 primary: string = '';
 	 secondary: string = '';
