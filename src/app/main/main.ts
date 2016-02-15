@@ -6,7 +6,7 @@ import {SearchService} from './search.service';
 import {HTTP_PROVIDERS} from 'angular2/http';
 
 @Component({
-	 selector: 'greeting',
+	 selector: 'app',
 	 template: `<div>
   <div *ngFor="#result of results">
 	 <div *ngIf="result"> 
@@ -40,7 +40,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 		  SearchService
 	 ]
 })
-export default class App {
+export class App {
 	 greeting = 'Hello World';
 	 primary: string = '';
 	 secondary: string = '';
