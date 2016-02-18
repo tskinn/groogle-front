@@ -1,20 +1,14 @@
 import {Component} from 'angular2/core';
-import {NgIf, NgFor} from 'angular2/common'
+import {NgIf, NgFor} from 'angular2/common';
 import {Observable} from 'rxjs/Rx';
 import {Result} from './result';
 import {SearchService} from './search.service';
 import {HTTP_PROVIDERS} from 'angular2/http';
+import {ListItem} from './list-item.component';
 
 @Component({
 	 selector: 'app',
 	 template: `<div>
-  <div *ngFor="#result of results">
-	 <div *ngIf="result"> 
-		Request Site: {{result.site}} <br>
-		Matches:      {{result.indices.length}} <br>
-		Page Length:  {{result.page.length}}
-	 </div>
-  </div>
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 	 <input id="sample3" class="mdl-textfield__input" type="text" [value]="primary" (input)="primary = $event.target.value" autofocus>
@@ -30,10 +24,16 @@ import {HTTP_PROVIDERS} from 'angular2/http';
   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="getId()">Get</button>
   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="print()">Print</button>
 </div>
+
+  <div *ngFor="#resulty of results">
+	<list-item [result]="resulty"></list-item><br>
+  </div>
+
 `,
 	 directives: [
 		  NgIf,
-		  NgFor
+		  NgFor,
+		  ListItem
 	 ],
 	 providers: [
 		  HTTP_PROVIDERS,
