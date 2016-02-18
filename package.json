@@ -2,16 +2,7 @@
   "name": "Groogle-Front",
   "version": "1.0.0",
   "description": "Grep for google front",
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "",
   "devDependencies": {
     "browser-sync": "^2.10.0",
     "del": "^2.1.0",
