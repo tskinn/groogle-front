@@ -8,28 +8,8 @@ import {ListItem} from './list-item.component';
 
 @Component({
 	 selector: 'app',
-	 template: `<div>
-
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-	 <input id="sample3" class="mdl-textfield__input" type="text" [value]="primary" (input)="primary = $event.target.value" autofocus>
-	 <label class="mdl-textfield__label" for="sample3">Primary</label>
-  </div>
-  <br>
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-	 <input id="sample4" class="mdl-textfield__input" type="text" [value]="secondary" (input)="secondary = $event.target.value" autofocus>
-	 <label class="mdl-textfield__label" for="sample4">Secondary</label>
-  </div>
-  <br>
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="getSearch()">Search</button>
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="getId()">Get</button>
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="print()">Print</button>
-</div>
-
-  <div *ngFor="#resulty of results">
-	<list-item [result]="resulty"></list-item><br>
-  </div>
-
-`,
+	 templateUrl: 'app/main/main.html',
+	 styleUrls: ['app/main/main.css'],
 	 directives: [
 		  NgIf,
 		  NgFor,
@@ -47,7 +27,7 @@ export class App {
 	 c: number = 0;
     errorMessage: string;
     results = [];
-	 id: string
+	 id: string;
 
 	 private _searchUrl = "http://localhost:8080/search?";
 	 private _idUrl = "http://localhost:8080/id/";

@@ -10,3 +10,9 @@ h2 {
 .context {
 	 background-color: green;
 }
+
+.main {
+	 margin-left: auto;
+	 margin-right: auto;
+	 width: 400px;
+}
