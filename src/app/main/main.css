@@ -1,18 +1,19 @@
-h2 {
-  color: red;
-}
+/* h2 { */
+/*   color: red; */
+/* } */
 
-.page_group {
-	 border: dotted;
-	 background-color: red;
-}
+/* .page_group { */
+/* 	 border: dotted; */
+/* 	 background-color: red; */
+/* } */
 
-.context {
-	 background-color: green;
-}
+/* .context { */
+/* 	 background-color: green; */
+/* } */
 
 .main {
 	 margin-left: auto;
 	 margin-right: auto;
-	 width: 400px;
+	 max-width: 700px;
 }
+

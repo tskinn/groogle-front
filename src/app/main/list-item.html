@@ -1,10 +1,11 @@
 <div *ngIf="result" class="page_group">
-Site: {{ result.site }} <br>
-Rank: {{ result.rank }} <br>
+  <h3>Site: {{ result.site }}</h3>
+  <h4>Rank: {{ result.rank + 1 }}</h4>
 
-  <ul>
-    <li *ngFor="#index of result.indices" class="context">
-      <div>{{ result.page.slice(index - 30, index + 50) }}</div>
+  <ul class="context">
+    <li class="card card-5" *ngFor="#i of result.indices" class="context">
+      <div>{{ result.page.slice(i - 50, i + 40) }}</div>
     </li>
   </ul>
+  {{ result.page }}
 </div>

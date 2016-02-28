@@ -5,16 +5,12 @@
 		<input class="" type="text" [value]="primary" (input)="primary = $event.target.value"/>
 		<label>Primary</label>
 	 </div>
-	 <div class="">
-		<input class="" type="text" [value]="secondary" (input)="secondary = $event.target.value"/>
-		<label>Secondary</label>
-	 </div>
 	 
 	 <button class="" (click)="getSearch()">Search</button>
   </div>
 
   <div *ngFor="#resulty of results">
-	 <list-item [result]="resulty"></list-item><br>
+	 <list [result]="resulty"></list><br>
   </div>
 </div>
 

@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Rx';
 import {Result} from './result';
 import {SearchService} from './search.service';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {ListItem} from './list-item.component';
+import {List} from './list.component';
 
 @Component({
 	 selector: 'app',
@@ -13,7 +13,7 @@ import {ListItem} from './list-item.component';
 	 directives: [
 		  NgIf,
 		  NgFor,
-		  ListItem
+		  List
 	 ],
 	 providers: [
 		  HTTP_PROVIDERS,
@@ -21,7 +21,6 @@ import {ListItem} from './list-item.component';
 	 ]
 })
 export class App {
-	 greeting = 'Hello World';
 	 primary: string = '';
 	 secondary: string = '';
 	 c: number = 0;
@@ -35,8 +34,20 @@ export class App {
 	 
     constructor(private _searchService: SearchService) {}
 
+	 getSearchWords() {
+		  var words = this.primary.split(" ")
+		  if (words.length == 1) {
+				this.primary = words[0];
+				this.secondary = words[0];
+		  } else {
+				this.primary = words[0];
+				this.secondary = words[1];
+		  }
+	 }
+	 
     getSearch() {
 		  this.results = [];
+		  this.getSearchWords();
 		  var searchstring = this._searchUrl + "primary=" + this.primary + "&secondary=" + this.secondary;
 		  this._searchService.getSearch(searchstring).subscribe(
 				result => this.id = result.id,
