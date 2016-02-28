@@ -3,6 +3,6 @@
   <h4>Rank: {{ result.rank + 1 }} Occurences: {{ result.indices.length }}</h4>
 
   <div class="card card-3" *ngFor="#i of result.indices">
-    <div class="card-content">{{ result.page.slice(i - 200, i + 200 + result.search.length) }}</div>
+    <div class="card-content">{{ result.page.slice(i - 300, i + 300 + result.search.length) }}</div>
   </div>
 </div>
